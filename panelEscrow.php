@@ -38,6 +38,7 @@
                         echo '<p>Status <b>'. $data->{'status'} .'</b></p><br />';
                         echo '<a href="#" class="button">Reverser à l\'acheteur</a>';
                         echo '<a href="#" class="button">Reverser au vendeur</a>';
+                        echo '</div>';
                     }
                 } else {
                     echo "<p>Il n'y a aucune commande sous escrow.</p>";
