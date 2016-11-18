@@ -38,7 +38,12 @@ if(isset($_GET['type']) && isset($_GET['id'])){
             </ul>
             </div>
             <div class="MenuCenter">
-                <h1>Gestion des utilisateurs</h1>
+                <?php 
+                $sql = "SELECT * FROM users";
+                $result = $conn->query($sql);
+                
+                ?>
+                <h1>Gestion des utilisateurs (<?php echo $result->num_rows; ?>)</h1>
                 <p>Gestions de tous les utilisateurs dans la base de données.</p>
                 <p>( EN COUR DE CONSTRUCTION )</p>
                 <br /><br />
@@ -55,7 +60,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                         echo '<h1>'. str_replace('u00e9', 'é', $data->{'user_name'}) .'</h1>';
                         echo '<p>Type <b>'. $data->{'type_vendeur'} .'</b></p>';
                         echo '<p>Grade <b>'. $data->{'grade_vendeur'} .'</b></p>';
-                        echo '<a href="#" class="button">Voir plus de details</a>';
+                        echo '<a href="#" class="button">Voir plus de details</a>&nbsp;';
                         echo '<a href="panelUser.php?type=delete&id='. $row['id'] .'" class="button">Supprimer</a>';
                         echo '</div>';
                     }
@@ -72,6 +77,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                     
                 </div>
                 -->
+                
             </div>
         </div>
     </body>
