@@ -1,4 +1,4 @@
-<?php include('config.php'); ?>
+<!-- <?php include('config.php'); ?>
 
 <?php 
 
@@ -18,7 +18,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
 }
 
 ?>
-
+-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,9 +35,10 @@ if(isset($_GET['type']) && isset($_GET['id'])){
             </ul>
             </div>
             <div class="MenuCenter">
-                <h1>Gestion de l'Escrow</h1>
-                <p>Gestions de toutes les commandes sous escrow.</p>
+                <h1>Gestion des utilisateurs</h1>
+                <p>Gestions de tous les utilisateurs dans la bd.</p>
                 <br /><br />
+                <!-- 
                 <?php 
                 $sql = "SELECT * FROM escrow";
                 $result = $conn->query($sql);
@@ -71,8 +72,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                 }
                 $conn->close();
                 ?>
-                <!-- ## Le model en html ##
-                     ##------------------##
+                -->
 
                 <div class="commande">
                     <h1>Commande N° 0</h1><br />
@@ -91,7 +91,6 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                     <a href="#" class="button">Reverser à l'acheteur</a>
                     <a href="#" class="button">Reverser au vendeur</a>
                 </div>
-                -->
                 
             </div>
         </div>
