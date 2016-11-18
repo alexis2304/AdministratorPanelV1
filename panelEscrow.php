@@ -59,7 +59,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                         echo '<p>Total (BTC) <b>' . $data->{'quantiter'} * $data->{'prix_uniter'} . '</b></p>';
                         echo '<p>Status <b>'. $data->{'status'} .'</b></p><br />';
                         if($data->{'status'} == 'litige' || $data->{'status'} == 'en cours de traitement'){
-                            echo '<a href="#" class="button">Reverser à l\'acheteur</a>';
+                            echo '<a href="#" class="button">Reverser à l\'acheteur</a>&nbsp;';
                             echo '<a href="#" class="button">Reverser au vendeur</a>';
                         }else{
                             echo '<a href="panelEscrow.php?type=delete&id=' . $row['id'] . '" class="button">Supprimer</a>';
