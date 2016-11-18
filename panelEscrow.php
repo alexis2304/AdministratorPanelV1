@@ -26,6 +26,7 @@
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         $data = json_decode($row['data_escrow']);
+                        echo '<div class="commande">';
                         echo '<h1>Commande N° '. $row['id'] .'</h1><br />';
                         echo '<p>Acheteur <b>'. $data->{'emeteur'} .'</b></p>';
                         echo '<p>Vendeur <b>'. $data->{'recepteur'} .'</b></p><br />';
