@@ -52,7 +52,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                     while($row = $result->fetch_assoc()) {
                         $data = json_decode($row['user_data']);
                         echo '<div class="commande">';
-                        echo '<h1>'. str_replace('u00e9', 'é', '$data->{'user_name'}) .'</h1>';
+                        echo '<h1>'. str_replace('u00e9', 'é', $data->{'user_name'}) .'</h1>';
                         echo '<p>Type <b>'. $data->{'type_vendeur'} .'</b></p>';
                         echo '<p>Grade <b>'. $data->{'grade_vendeur'} .'</b></p>';
                         echo '<a href="#" class="button">Voir plus de details</a>';
