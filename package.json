@@ -1,0 +1,26 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "asar pack MyApp-win32-ia32/resources/app MyApp-win32-ia32/resources/app.asar",
+    "build": "electron-packager . MyApp --platform=win32 --arch=ia32 version=0.27.2"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "asar": "^0.12.3",
+    "electron": "^1.4.1",
+    "electron-packager": "^8.3.0"
+  }
+}
