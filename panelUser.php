@@ -50,7 +50,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        $data = json_decode($row['data_escrow']);
+                        $data = json_decode($row['user_data']);
                         echo '<div class="commande">';
                         echo '<h1>'. $data->{'user_name'} .'</h1>';
                         echo '<p>Type <b>'. $data->{'type_vendeur'} .'</b></p>';
