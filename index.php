@@ -9,7 +9,7 @@
     <div class="Center">
       <h1 class="thin">Mini Panel v1</h1>
       <br />
-      <form action="panelEscrow.html">
+      <form action="panelEscrow.php">
         <input type="text" style="text-align:center;" placeholder="Nom d'utilisateur">
           <input type="password" style="text-align:center;" placeholder="Mot de passe">
           <input type="password" style="text-align:center;" placeholder="SSK">
