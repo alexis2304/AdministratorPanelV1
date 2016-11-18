@@ -46,7 +46,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                     while($row = $result->fetch_assoc()) {
                         $data = json_decode($row['data_escrow']);
                         echo '<div class="commande">';
-                        echo '<h1>Commande N° '. $row['id'] .'</h1><br />';
+                        echo '<h1>Commande N° '. $data->{'id'} .'</h1><br />';
                         echo '<p>Acheteur <b>'. $data->{'emeteur'} .'</b></p>';
                         echo '<p>Vendeur <b>'. $data->{'recepteur'} .'</b></p><br />';
                         echo '<p>Uniter <b>'. $data->{'vente_uniter'} .'</b></p>';
