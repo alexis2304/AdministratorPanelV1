@@ -7,7 +7,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
     $id = htmlspecialchars($_GET['id']);
     
     if($type == "delete"){
-        $sql = "DELETE FROM escrow WHERE id=" . $id;
+        $sql = "DELETE FROM users WHERE id=" . $id;
 
         if ($conn->query($sql) === TRUE) {
             header('location:panelUser.php');
@@ -55,7 +55,7 @@ if(isset($_GET['type']) && isset($_GET['id'])){
                         echo '<p>Type <b>'. $data->{'type_vendeur'} .'</b></p>';
                         echo '<p>Grade <b>'. $data->{'grade_vendeur'} .'</b></p>';
                         echo '<a href="#" class="button">Voir plus de details</a>';
-                        echo '<a href="#" class="button">Supprimer</a>';
+                        echo '<a href="panelUser.php?type=delete&id='. $row['id'] .'" class="button">Supprimer</a>';
                         echo '</div>';
                     }
                 } else {
