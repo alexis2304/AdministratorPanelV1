@@ -10,7 +10,9 @@
       <h1 class="thin">Mini Panel v1</h1>
       <br />
       <form action="panelEscrow.html">
-        <input type="text" style="text-align:center;" placeholder="Numéro d'identification">
+        <input type="text" style="text-align:center;" placeholder="Nom d'utilisateur">
+          <input type="password" style="text-align:center;" placeholder="Mot de passe">
+          <input type="password" style="text-align:center;" placeholder="SSK">
         <input type="submit" value="Se connecter">
       </form>
       <br />

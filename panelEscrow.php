@@ -1,5 +1,24 @@
 <?php include('config.php'); ?>
 
+<?php 
+
+if(isset($_GET['type']) && isset($_GET['id'])){
+    $type = htmlspecialchars($_GET['type']);
+    $id = htmlspecialchars($_GET['id']);
+    
+    if($type == "delete"){
+        $sql = "DELETE FROM escrow WHERE id=" . $id;
+
+        if ($conn->query($sql) === TRUE) {
+            header('location:panelEscrow.php');
+        } else {
+            header('location:panelEscrow.php');
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,8 +56,12 @@
                         echo '<p>Total (€) <b>' . $data->{'quantiter'} * $data->{'prix_uniter'} . '</b></p>';
                         echo '<p>Total (BTC) <b>' . $data->{'quantiter'} * $data->{'prix_uniter'} . '</b></p>';
                         echo '<p>Status <b>'. $data->{'status'} .'</b></p><br />';
-                        echo '<a href="#" class="button">Reverser à l\'acheteur</a>';
-                        echo '<a href="#" class="button">Reverser au vendeur</a>';
+                        if($data->{'status'} == 'litige'){
+                            echo '<a href="#" class="button">Reverser à l\'acheteur</a>';
+                            echo '<a href="#" class="button">Reverser au vendeur</a>';
+                        }else{
+                            echo '<a href="panelEscrow.php?type=delete&id=' . $row['id'] . '" class="button">Supprimer</a>';
+                        }
                         echo '</div>';
                     }
                 } else {
@@ -46,7 +69,9 @@
                 }
                 $conn->close();
                 ?>
-                <!-- 
+                <!-- ## Le model en html ##
+                     ##------------------##
+
                 <div class="commande">
                     <h1>Commande N° 0</h1><br />
                     <p>Acheteur <b>Huston</b></p>
